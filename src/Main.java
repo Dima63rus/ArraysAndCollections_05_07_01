@@ -23,16 +23,15 @@ public class Main {
 
         Scanner loScanner = new Scanner(System.in);
         String lvTextBlock = """
-                Введите команду из списка:  
+                Введите команду из списка:
                          LIST
-                         ADD текст 
+                         ADD текст
                          ADD порядковый номер текст
                          EDIT порядковый номер текст
                          DELETE порядковый номер
                 """;
         System.out.println(lvTextBlock);
         String loScannerLine = loScanner.nextLine();
-//        String loScannerLine = "ADD 0 Какое-то дело на нулевом месте"; //Test
 
         ArrayList<String> ltArrayList = new ArrayList<>();
 
@@ -52,13 +51,11 @@ public class Main {
         }
         //EDIT
         if (lvFirstWordFromScanner.equals(LC_EDIT)) {
-            //Заменяет дело с указанным номером
-//            ltArrayList = executeEDIT();
+            ltArrayList = loTeams.executeEDIT(ltWordsFromScanner);
         }
         //DELETE
         if (lvFirstWordFromScanner.equals(LC_DELETE)) {
-            //Удаляет
-//            ltArrayList = executeDELETE();
+            ltArrayList = loTeams.executeDELETE(ltWordsFromScanner);
         }
 
         //Вывод на экран
