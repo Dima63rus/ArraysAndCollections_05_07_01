@@ -2,15 +2,15 @@ import java.util.ArrayList;
 
 public class Teams {
     private final ArrayList<String> mtArrayList = new ArrayList<>() {{
-        add("Первое дело");
-        add("Второе дело");
-        add("Третье дело");
+        add("РџРµСЂРІРѕРµ РґРµР»Рѕ");
+        add("Р’С‚РѕСЂРѕРµ РґРµР»Рѕ");
+        add("РўСЂРµС‚СЊРµ РґРµР»Рѕ");
     }};
 
     /*
         method executeList
 
-        Выводит дела с их порядковыми номерами
+        Р’С‹РІРѕРґРёС‚ РґРµР»Р° СЃ РёС… РїРѕСЂСЏРґРєРѕРІС‹РјРё РЅРѕРјРµСЂР°РјРё
     */
     public ArrayList<String> executeList() {
         for (int i = 0; i < mtArrayList.size(); i++) {
@@ -22,17 +22,17 @@ public class Teams {
     /*
         method executeADD
 
-        Добавляет дело в конец списка или дело на определённое место, сдвигая остальные дела вперёд,
-        если указать номер
+        Р”РѕР±Р°РІР»СЏРµС‚ РґРµР»Рѕ РІ РєРѕРЅРµС† СЃРїРёСЃРєР° РёР»Рё РґРµР»Рѕ РЅР° РѕРїСЂРµРґРµР»С‘РЅРЅРѕРµ РјРµСЃС‚Рѕ, СЃРґРІРёРіР°СЏ РѕСЃС‚Р°Р»СЊРЅС‹Рµ РґРµР»Р° РІРїРµСЂС‘Рґ,
+        РµСЃР»Рё СѓРєР°Р·Р°С‚СЊ РЅРѕРјРµСЂ
     */
     public ArrayList<String> executeADD(String[] itWordsFromScanner) {
         StringBuilder lvTextAfterAdd = new StringBuilder();
         int lvPozNumber = 0;
         try {
-            //Проверка на число в строке после первого слова
+            //РџСЂРѕРІРµСЂРєР° РЅР° С‡РёСЃР»Рѕ РІ СЃС‚СЂРѕРєРµ РїРѕСЃР»Рµ РїРµСЂРІРѕРіРѕ СЃР»РѕРІР°
             int intValue = Integer.parseInt(itWordsFromScanner[1]);
 
-            //С порядковым номером
+            //РЎ РїРѕСЂСЏРґРєРѕРІС‹Рј РЅРѕРјРµСЂРѕРј
             for (int i = 1; i < itWordsFromScanner.length; i++) {
                 if (i == 1) {
                     lvPozNumber = Integer.parseInt(itWordsFromScanner[i]);
@@ -41,20 +41,20 @@ public class Teams {
                     lvTextAfterAdd.append(" ");
                 }
             }
-            //Добавить в список с порядковым номером
+            //Р”РѕР±Р°РІРёС‚СЊ РІ СЃРїРёСЃРѕРє СЃ РїРѕСЂСЏРґРєРѕРІС‹Рј РЅРѕРјРµСЂРѕРј
             if (lvPozNumber > mtArrayList.size()) {
-                System.out.println("Позиция " + lvPozNumber + " превышает длинну списка " + mtArrayList.size());
-                //Выход из программы
+                System.out.println("РџРѕР·РёС†РёСЏ " + lvPozNumber + " РїСЂРµРІС‹С€Р°РµС‚ РґР»РёРЅРЅСѓ СЃРїРёСЃРєР° " + mtArrayList.size());
+                //Р’С‹С…РѕРґ РёР· РїСЂРѕРіСЂР°РјРјС‹
                 System.exit(0);
             }
             mtArrayList.add(lvPozNumber, lvTextAfterAdd.toString().trim());
         } catch (NumberFormatException e) {
-            //Без порядкового
+            //Р‘РµР· РїРѕСЂСЏРґРєРѕРІРѕРіРѕ
             for (int i = 1; i < itWordsFromScanner.length; i++) {
                 lvTextAfterAdd.append(itWordsFromScanner[i]);
                 lvTextAfterAdd.append(" ");
             }
-            //Добавить в список
+            //Р”РѕР±Р°РІРёС‚СЊ РІ СЃРїРёСЃРѕРє
             mtArrayList.add(lvTextAfterAdd.toString().trim());
         }
         return mtArrayList;
@@ -63,7 +63,7 @@ public class Teams {
     /*
        method executeEDIT
 
-       Заменяет дело с указанным номером
+       Р—Р°РјРµРЅСЏРµС‚ РґРµР»Рѕ СЃ СѓРєР°Р·Р°РЅРЅС‹Рј РЅРѕРјРµСЂРѕРј
    */
     public ArrayList<String> executeEDIT(String[] itWordsFromScanner) {
         StringBuilder lvTextAfterAdd = new StringBuilder();
@@ -71,7 +71,7 @@ public class Teams {
         try {
             for (int i = 1; i < itWordsFromScanner.length; i++) {
                 if (i == 1) {
-                    //Проверка на число в строке после первого слова
+                    //РџСЂРѕРІРµСЂРєР° РЅР° С‡РёСЃР»Рѕ РІ СЃС‚СЂРѕРєРµ РїРѕСЃР»Рµ РїРµСЂРІРѕРіРѕ СЃР»РѕРІР°
                     lvPozNumber = Integer.parseInt(itWordsFromScanner[i]);
                 } else {
                     lvTextAfterAdd.append(itWordsFromScanner[i]);
@@ -79,18 +79,18 @@ public class Teams {
                 }
             }
 
-            //Проверка на порядковый номер
+            //РџСЂРѕРІРµСЂРєР° РЅР° РїРѕСЂСЏРґРєРѕРІС‹Р№ РЅРѕРјРµСЂ
             if (lvPozNumber > mtArrayList.size()) {
-                System.out.println("Позиция " + lvPozNumber + " превышает длинну списка " + mtArrayList.size());
+                System.out.println("РџРѕР·РёС†РёСЏ " + lvPozNumber + " РїСЂРµРІС‹С€Р°РµС‚ РґР»РёРЅРЅСѓ СЃРїРёСЃРєР° " + mtArrayList.size());
             } else {
-                //Удаление по индексу из списка
+                //РЈРґР°Р»РµРЅРёРµ РїРѕ РёРЅРґРµРєСЃСѓ РёР· СЃРїРёСЃРєР°
                 mtArrayList.remove(lvPozNumber);
 
-                //Вставка нового текста по индексу
+                //Р’СЃС‚Р°РІРєР° РЅРѕРІРѕРіРѕ С‚РµРєСЃС‚Р° РїРѕ РёРЅРґРµРєСЃСѓ
                 mtArrayList.add(lvPozNumber, lvTextAfterAdd.toString().trim());
             }
         } catch (NumberFormatException e) {
-            System.out.println("Введите текст по шаблону: EDIT + индекс.позиции + текст");
+            System.out.println("Р’РІРµРґРёС‚Рµ С‚РµРєСЃС‚ РїРѕ С€Р°Р±Р»РѕРЅСѓ: EDIT + РёРЅРґРµРєСЃ.РїРѕР·РёС†РёРё + С‚РµРєСЃС‚");
         }
         return mtArrayList;
     }
@@ -98,22 +98,22 @@ public class Teams {
     /*
        method executeDELETE
 
-       Удаляет
+       РЈРґР°Р»СЏРµС‚
    */
     public ArrayList<String> executeDELETE(String[] itWordsFromScanner) {
         try {
-            //Проверка на число в строке после первого слова
+            //РџСЂРѕРІРµСЂРєР° РЅР° С‡РёСЃР»Рѕ РІ СЃС‚СЂРѕРєРµ РїРѕСЃР»Рµ РїРµСЂРІРѕРіРѕ СЃР»РѕРІР°
             int lvPozNumber = Integer.parseInt(itWordsFromScanner[1]);
 
-            //Проверка на порядковый номер
+            //РџСЂРѕРІРµСЂРєР° РЅР° РїРѕСЂСЏРґРєРѕРІС‹Р№ РЅРѕРјРµСЂ
             if (lvPozNumber > mtArrayList.size()) {
-                System.out.println("Позиция " + lvPozNumber + " превышает длинну списка " + mtArrayList.size());
+                System.out.println("РџРѕР·РёС†РёСЏ " + lvPozNumber + " РїСЂРµРІС‹С€Р°РµС‚ РґР»РёРЅРЅСѓ СЃРїРёСЃРєР° " + mtArrayList.size());
             } else {
-                //Удаление по индексу из списка
+                //РЈРґР°Р»РµРЅРёРµ РїРѕ РёРЅРґРµРєСЃСѓ РёР· СЃРїРёСЃРєР°
                 mtArrayList.remove(lvPozNumber);
             }
         } catch (NumberFormatException e) {
-            System.out.println("Введите текст по шаблону: DELETE + индекс.позиции");
+            System.out.println("Р’РІРµРґРёС‚Рµ С‚РµРєСЃС‚ РїРѕ С€Р°Р±Р»РѕРЅСѓ: DELETE + РёРЅРґРµРєСЃ.РїРѕР·РёС†РёРё");
         }
         return mtArrayList;
     }
@@ -121,7 +121,7 @@ public class Teams {
     /*
    method showList
 
-   Показать список на экран
+   РџРѕРєР°Р·Р°С‚СЊ СЃРїРёСЃРѕРє РЅР° СЌРєСЂР°РЅ
    */
     public void showList(ArrayList<String> itArrayList) {
         for (int i = 0; i < itArrayList.size(); i++) {
