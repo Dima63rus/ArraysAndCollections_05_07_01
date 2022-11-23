@@ -21,12 +21,9 @@ public class Teams {
         Добавляет дело в конец списка или дело на определённое место, сдвигая остальные дела вперёд,
         если указать номер
     */
-    public ArrayList<String> executeADD(String ioScannerStr,
-                                        String[] itWordsFromScanner) {
+    public ArrayList<String> executeADD( String[] itWordsFromScanner) {
         StringBuilder lvTextAfterAdd = new StringBuilder();
-//        String lvTextAfterAdd = "";
         int lvPozNumber = 0;
-
         try {
             //Проверка на число в строке после первого слова
             int intValue = Integer.parseInt(itWordsFromScanner[1]);
@@ -38,7 +35,6 @@ public class Teams {
                 } else {
                     lvTextAfterAdd.append(itWordsFromScanner[i]);
                     lvTextAfterAdd.append(" ");
-//                    lvTextAfterAdd += itWordsFromScanner[i] + " ";
                 }
             }
             //Добавить в список с порядковым номером
@@ -48,17 +44,14 @@ public class Teams {
                 System.exit(0);
             }
             mtArrayList.add(lvPozNumber, lvTextAfterAdd.toString().trim());
-//            mtArrayList.add(lvPozNumber, lvTextAfterAdd.trim());
         } catch (NumberFormatException e) {
             //Без порядкового
             for (int i = 1; i < itWordsFromScanner.length; i++) {
                 lvTextAfterAdd.append(itWordsFromScanner[i]);
                 lvTextAfterAdd.append(" ");
-//                lvTextAfterAdd += itWordsFromScanner[i] + " ";
             }
             //Добавить в список
             mtArrayList.add(lvTextAfterAdd.toString().trim());
-//            mtArrayList.add(lvTextAfterAdd.trim());
         }
         return mtArrayList;
     }

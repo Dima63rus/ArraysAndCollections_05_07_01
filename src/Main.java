@@ -48,7 +48,7 @@ public class Main {
         }
         //ADD
         if (lvFirstWordFromScanner.equals(LC_ADD)) {
-            ltArrayList = loTeams.executeADD(loScannerLine, ltWordsFromScanner);
+            ltArrayList = loTeams.executeADD(ltWordsFromScanner);
         }
         //EDIT
         if (lvFirstWordFromScanner.equals(LC_EDIT)) {
